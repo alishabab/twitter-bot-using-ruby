@@ -10,6 +10,5 @@ class Config
       access_token_secret: ENV['access_token_secret']
     }
     @rest_client = Twitter::REST::Client.new(@config)
-    @emoji_api_url = 'https://emoji-api.com/emojis?access_key=' + ENV['emoji_api_key']
   end
 end

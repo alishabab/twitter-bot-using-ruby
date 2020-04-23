@@ -6,7 +6,7 @@ require_relative '../lib/emoji.rb'
 config = Config.new
 bot = Bot.new
 emoji = Emoji.new
-emoji_today = emoji.get_emoji(config.emoji_api_url, Time.new.day)
+emoji_today = emoji.get_emoji(Time.new.day)
 tweets = ['Multi-paradigm: you can do Object-Oriented, Functional, Imperative programming.',
           'Mix and match, thats suits your objective',
           'A joy to code in',
