@@ -7,5 +7,21 @@ config = Config.new
 bot = Bot.new
 emoji = Emoji.new
 emoji_today = emoji.get_emoji(Time.new.day)
-puts emoji_today
-bot.publish_tweet(config.rest_client, "Ruby is amazing..   #{emoji_today}")
+tweets = ['Multi-paradigm: you can do Object-Oriented, Functional, Imperative programming.',
+          'Mix and match, thats suits your objective',
+          'A joy to code in',
+          'Flexible and expressive',
+          'Multi-platform: Linux, Windows, Mac, iOS, Android, etc.',
+          'Mature, well-maintained, battle-tested by largest websites in the world.',
+          'Treasure trove of gems / libraries / plugins.',
+          'Awesome testing infrastructure.',
+          'Well suited for web development, system administration, scripting, back-end development.']
+i = 0
+20.times do
+  i = i > 10 ? i % 10 : i
+  bot.publish_tweet(config.rest_client, tweets[i] + ' ' + emoji_today)
+  sleep 30
+  bot.retweet_tweet(config.rest_client, '#rubybenefits')
+  sleep 30
+  i += 1
+end

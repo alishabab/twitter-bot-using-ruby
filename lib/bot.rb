@@ -3,9 +3,13 @@ class Bot
     rest_client.update(text)
   end
 
-  def search_tweet(rest_client)
-    rest_client.search('#rubybenefits').take(1).each do |tweet|
-      rest_client.update("@#{tweet.user.screen_name} Hey I love Ruby too, what are your favorite blogs? :)")
+  def search_tweet(rest_client, hashtag)
+    rest_client.search(hashtag)
+  end
+
+  def retweet_tweet(rest_client, hashtag)
+    search_tweet(rest_client, hashtag).take(3).each do |tweet|
+      rest_client.retweet(tweet)
     end
   end
 end
