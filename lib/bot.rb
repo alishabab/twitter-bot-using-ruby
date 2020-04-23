@@ -1,6 +1,6 @@
 class Bot
-  def publish_tweet(rest_client, text)
-    rest_client.update(text)
+  def publish_tweet(rest_client, status)
+    rest_client.update(status)
   end
 
   def search_tweet(rest_client, hashtag)
