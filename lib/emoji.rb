@@ -1,8 +1,7 @@
 require 'json'
 require 'httparty'
 class Emoji
-  def get_emoji(day)
-    url = 'https://emoji-api.com/emojis?access_key=' + ENV['emoji_api_key']
+  def get_emoji(url, day)
     response = HTTParty.get(url)
     if response.code == 200
       my_hash = JSON.parse(response.body.to_s)

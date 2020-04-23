@@ -6,7 +6,7 @@ require_relative '../lib/emoji.rb'
 config = Config.new
 bot = Bot.new
 emoji = Emoji.new
-emoji_today = emoji.get_emoji(Time.new.day)
+emoji_today = emoji.get_emoji(config.emoji_api_url, Time.new.day)
 tweets = ['Multi-paradigm: you can do Object-Oriented, Functional, Imperative programming.',
           'Mix and match, thats suits your objective',
           'A joy to code in',
@@ -17,11 +17,14 @@ tweets = ['Multi-paradigm: you can do Object-Oriented, Functional, Imperative pr
           'Awesome testing infrastructure.',
           'Well suited for web development, system administration, scripting, back-end development.']
 i = 0
-20.times do
+count = 0
+3.times do
   i = i > 10 ? i % 10 : i
   bot.publish_tweet(config.rest_client, tweets[i] + ' ' + emoji_today)
+  puts("Published #{count + 1} tweets")
   sleep 30
   bot.retweet_tweet(config.rest_client, '#rubybenefits')
   sleep 30
   i += 1
+  count += 1
 end
