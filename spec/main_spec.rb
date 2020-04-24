@@ -30,14 +30,13 @@ describe Bot do
   end
 end
 describe Emoji do
-  config = Config.new
   emoji = Emoji.new
   describe 'get_emoji' do
     it 'return am emoji based on current day of month' do
-      expect(emoji.get_emoji(config.emoji_api_url, 1)).to eql(JSON.parse('"\ud83d\ude03"'))
+      expect(emoji.get_emoji(1)).to eql(JSON.parse('"\ud83d\ude03"'))
     end
     it 'returns error when wrong number of argument is given' do
-      expect { emoji.get_emoji(config.emoji_api_url) }.to raise_error(ArgumentError)
+      expect { emoji.get_emoji }.to raise_error(ArgumentError)
     end
   end
 end
