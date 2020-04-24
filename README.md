@@ -2,7 +2,7 @@
 
 # Twiiter Bot using Ruby language [Solo Project]
 
-This project is a twitter bot developed in ruby language. The bot @ruby_benifits publishes benefits of ruby language on a certain interval.
+This project is a twitter bot developed in ruby language. The bot @ruby_benifits publishes benefits of ruby language on a certain interval. Read the project requirements [here](https://www.notion.so/microverse/Build-your-own-bot-ebd0d7ac5da240e5987720bdc83f38fa)
 
 ## Getting Started
 
@@ -12,6 +12,7 @@ To get a local copy up and running follow these simple example steps.
 
 - You should have installed git and ruby environment installed on your local machine.
 - Twitter Developer account with API keys. [Raise request](https://developer.twitter.com/en/apply-for-access)
+- Get API keys from [https://emoji-api.com/](https://emoji-api.com/)
 
 ### Setup
 

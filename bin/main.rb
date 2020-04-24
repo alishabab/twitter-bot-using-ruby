@@ -18,13 +18,13 @@ tweets = ['Multi-paradigm: you can do Object-Oriented, Functional, Imperative pr
           'Well suited for web development, system administration, scripting, back-end development.']
 i = 0
 count = 0
-3.times do
+loop do
   i = i > 10 ? i % 10 : i
   bot.publish_tweet(config.rest_client, tweets[i] + ' ' + emoji_today)
   puts("Published #{count + 1} tweets")
-  sleep 30
+  sleep 3600
   bot.retweet_tweet(config.rest_client, '#rubybenefits')
-  sleep 30
+  sleep 3600
   i += 1
   count += 1
 end
